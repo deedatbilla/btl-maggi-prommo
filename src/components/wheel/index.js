@@ -1,16 +1,16 @@
 import React from "react";
 import "./index.css";
 import axios from "axios";
-import Button from "react-bootstrap/Button";
+// import Button from "react-bootstrap/Button";
 import { Modal } from "react-bootstrap";
 const smsurl = "https://skrillergh.pythonanywhere.com/checkwinnings/";
 //+233508305891
-const customStyles = {
-  content: {
-    zIndex: "5",
-    transform: "translate(0%, 0%)",
-  },
-};
+// const customStyles = {
+//   content: {
+//     zIndex: "5",
+//     transform: "translate(0%, 0%)",
+//   },
+// };
 export default class Wheel extends React.Component {
   constructor(props) {
     super(props);
@@ -39,11 +39,11 @@ export default class Wheel extends React.Component {
     e.preventDefault();
     this.setState({ loading: true });
     try {
-      const { fname, lname, age, phone, prize, location,gender } = this.state;
+      const { fname, lname, phone, prize, location,gender } = this.state;
       const userdata = {
         fname,
         lname,
-        age,
+        age:"0",
         recNo: phone,
         p: prize.name,
         gender,
@@ -71,11 +71,11 @@ export default class Wheel extends React.Component {
     this.setState({ modalIsOpen: false });
   };
   modal = () => {
-    const { fname, lname,  age, phone, location, modalIsOpen,gender } = this.state;
+    const { fname, lname, phone, location, modalIsOpen,gender } = this.state;
 
     return (
       <Modal show={modalIsOpen}>
-        <form onSubmit={this.onSubmit} className="mymodal">
+        <form onSubmit={this.onSubmit} className="">
           <Modal.Header>
             <h5 className="modal-title" id="addOwnerModalText" style={{ color: "black" }}>
               Congratulations on winning your <b style={{ color: "red", fontWeight: "bold" }}>{this.state.prize.name}</b>. fill
@@ -137,7 +137,7 @@ export default class Wheel extends React.Component {
               </div>
 
               <div className="row">
-                <div className="col">
+                {/* <div className="col">
                   <div className="form-group">
                     <label htmlFor="inputThree" className="col-form-label">
                       Age
@@ -152,7 +152,7 @@ export default class Wheel extends React.Component {
                       className="form-control"
                     />
                   </div>
-                </div>
+                </div> */}
                 <div className="col">
                   <div className="form-group">
                     <label htmlFor="inputFour" className="col-form-label">
@@ -233,7 +233,8 @@ export default class Wheel extends React.Component {
           <div className="row">
             <div className="col-md-12 text-center">
               <h3 className="" style={{ color: "purple" }}>
-                WIN YOUR MAGGI PROMOTION PRIZE HERE
+                {/* WIN YOUR MAGGI PROMOTION PRIZE HERE */}
+                WIN YOUR PRIZE HERE
               </h3>
             </div>
           </div>

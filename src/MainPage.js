@@ -1,10 +1,7 @@
 import React from "react";
-
 import Wheel from "./components/wheel";
 import axios from "axios";
-
 import "./styles.css";
-
 export default class MainPage extends React.Component {
   // constructor() {
   //   super();

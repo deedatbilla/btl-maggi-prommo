@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from 'axios';
-const api_url="https://skrillergh.pythonanywhere.com/checkwinnings/"
+// const api_url="https://skrillergh.pythonanywhere.com/checkwinnings/"
 class SelectRegionPage extends Component {
   state = {
     region: "",
@@ -18,7 +18,7 @@ class SelectRegionPage extends Component {
   }
   onChange = e => this.setState({ [e.target.name]: e.target.value });
   render() {
-    const { region } = this.state;
+    // const { region } = this.state;
     return (
       <div className="container p-4">
         <form onSubmit={this.onSubmit}>
@@ -29,7 +29,7 @@ class SelectRegionPage extends Component {
             <select  name="region" required onChange={this.onChange} class="form-control">
               <option value="">---select region ---</option>
               {this.state.regions.map(data=>(
-              <option value={data.includes("/")?data.replace("/"," "):data}>{data}</option>
+              <option  value={data.includes("/")?data.replace("/"," "):data}>{data}</option>
               ))}
             </select>
            

@@ -3,7 +3,7 @@
   --wheel-size: 350px;
   --wheel-slice-spacing: 50px;
   --wheel-border-size: 5px;
-  --wheel-color: #fcc700;
+  --wheel-color: #30f705;
   --neutral-color: white;
   --PI: 3.14159265358979;
   --nb-item: 1;
@@ -14,7 +14,7 @@
   --reset-duration: 0.25s;
 }
 .mymodal {
-  background-image: url(../../bg3.jpeg);
+  background-image: url(../../detol.jpeg);
   background-size: cover;
   background-repeat: no-repeat;
 }
