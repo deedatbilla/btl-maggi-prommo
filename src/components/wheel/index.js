@@ -25,7 +25,8 @@ export default class Wheel extends React.Component {
       prize: "",
       loading: false,
       modalIsOpen: false,
-      gender:''
+      gender:'',
+      outletname:""
     };
     this.selectItem = this.selectItem.bind(this);
   }
@@ -39,7 +40,7 @@ export default class Wheel extends React.Component {
     e.preventDefault();
     this.setState({ loading: true });
     try {
-      const { fname, lname, phone, prize, location,gender } = this.state;
+      const { fname, lname, phone, prize, location,gender,outletname } = this.state;
       const userdata = {
         fname,
         lname,
@@ -50,6 +51,7 @@ export default class Wheel extends React.Component {
         package_id: prize.package_id + "",
         location,
         region: this.props.region,
+        outletname
       };
       console.log(userdata);
       const resSMS = await axios.post(smsurl, userdata);
@@ -71,7 +73,7 @@ export default class Wheel extends React.Component {
     this.setState({ modalIsOpen: false });
   };
   modal = () => {
-    const { fname, lname, phone, location, modalIsOpen,gender } = this.state;
+    const { fname, lname, phone, location, modalIsOpen,gender,outletname } = this.state;
 
     return (
       <Modal show={modalIsOpen}>
@@ -129,11 +131,17 @@ export default class Wheel extends React.Component {
                       onChange={this.onChange}
                       name="phone"
                       required
-                      type="text"
+                      
+                      
+                      type="number"
                       className="form-control"
                     />
                   </div>
+
+                  
                 </div>
+
+
               </div>
 
               <div className="row">
@@ -181,6 +189,27 @@ export default class Wheel extends React.Component {
                     </select>
                   </div>
                 </div>
+              </div>
+
+              <div className="row">
+               
+                <div className="col">
+                  <div className="form-group">
+                    <label htmlFor="inputFour" className="col-form-label">
+                      Outlet name
+                    </label>
+                    <input
+                      id="inputFour"
+                      value={outletname}
+                      onChange={this.onChange}
+                      name="outletname"
+                      required
+                      type="text"
+                      className="form-control"
+                    />
+                  </div>
+                </div>
+             
               </div>
 
               <div className="row"></div>
