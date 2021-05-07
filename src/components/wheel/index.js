@@ -261,7 +261,7 @@ export default class Wheel extends React.Component {
         <div className="container ">
           <div className="row">
             <div className="col-md-12 text-center">
-              <h3 className="" style={{ color: "purple" }}>
+              <h3 className="" style={{ color: "white" }}>
                 {/* WIN YOUR MAGGI PROMOTION PRIZE HERE */}
                 WIN YOUR PRIZE HERE
               </h3>
@@ -285,7 +285,7 @@ export default class Wheel extends React.Component {
           </div>
           <div className="row mb-4 ">
             <div className="col-12 text-center">
-              <h3 style={{ color: "purple" }}> Prizes won</h3>
+              <h3 style={{ color: "white" }}> Prizes won</h3>
               <div className="card">
                 <table class="table">
                   <thead>
